@@ -164,6 +164,22 @@
     <Compile Include="Migrations\201904200724286_UpdateMembershipTypeNameToDatabase.Designer.cs">
       <DependentUpon>201904200724286_UpdateMembershipTypeNameToDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904200734208_AddBirthdayToCustomer.cs" />
+    <Compile Include="Migrations\201904200734208_AddBirthdayToCustomer.Designer.cs">
+      <DependentUpon>201904200734208_AddBirthdayToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904200735338_AddBirthdayDataToCustomer.cs" />
+    <Compile Include="Migrations\201904200735338_AddBirthdayDataToCustomer.Designer.cs">
+      <DependentUpon>201904200735338_AddBirthdayDataToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904200752532_RenameBirthdayToBirthdate.cs" />
+    <Compile Include="Migrations\201904200752532_RenameBirthdayToBirthdate.Designer.cs">
+      <DependentUpon>201904200752532_RenameBirthdayToBirthdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904200754487_ReUpdateBirthdateValue.cs" />
+    <Compile Include="Migrations\201904200754487_ReUpdateBirthdateValue.Designer.cs">
+      <DependentUpon>201904200754487_ReUpdateBirthdateValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipTypes.cs" />
@@ -258,6 +274,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904200724286_UpdateMembershipTypeNameToDatabase.resx">
       <DependentUpon>201904200724286_UpdateMembershipTypeNameToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904200734208_AddBirthdayToCustomer.resx">
+      <DependentUpon>201904200734208_AddBirthdayToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904200735338_AddBirthdayDataToCustomer.resx">
+      <DependentUpon>201904200735338_AddBirthdayDataToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904200752532_RenameBirthdayToBirthdate.resx">
+      <DependentUpon>201904200752532_RenameBirthdayToBirthdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904200754487_ReUpdateBirthdateValue.resx">
+      <DependentUpon>201904200754487_ReUpdateBirthdateValue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
