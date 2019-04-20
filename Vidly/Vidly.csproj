@@ -180,8 +180,37 @@
     <Compile Include="Migrations\201904200754487_ReUpdateBirthdateValue.Designer.cs">
       <DependentUpon>201904200754487_ReUpdateBirthdateValue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904202135161_AddReleaseDate.cs" />
+    <Compile Include="Migrations\201904202135161_AddReleaseDate.Designer.cs">
+      <DependentUpon>201904202135161_AddReleaseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202136075_AddDateAdded.cs" />
+    <Compile Include="Migrations\201904202136075_AddDateAdded.Designer.cs">
+      <DependentUpon>201904202136075_AddDateAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202136369_AddNumberInStock.cs" />
+    <Compile Include="Migrations\201904202136369_AddNumberInStock.Designer.cs">
+      <DependentUpon>201904202136369_AddNumberInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202137449_AddGenreModel.cs" />
+    <Compile Include="Migrations\201904202137449_AddGenreModel.Designer.cs">
+      <DependentUpon>201904202137449_AddGenreModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202139161_AddGenre.cs" />
+    <Compile Include="Migrations\201904202139161_AddGenre.Designer.cs">
+      <DependentUpon>201904202139161_AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202139541_AddDataToGenreTable.cs" />
+    <Compile Include="Migrations\201904202139541_AddDataToGenreTable.Designer.cs">
+      <DependentUpon>201904202139541_AddDataToGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202150056_RenameIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\201904202150056_RenameIsSubscribedToNewsletter.Designer.cs">
+      <DependentUpon>201904202150056_RenameIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipTypes.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDbContext.cs" />
@@ -286,6 +315,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904200754487_ReUpdateBirthdateValue.resx">
       <DependentUpon>201904200754487_ReUpdateBirthdateValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202135161_AddReleaseDate.resx">
+      <DependentUpon>201904202135161_AddReleaseDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202136075_AddDateAdded.resx">
+      <DependentUpon>201904202136075_AddDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202136369_AddNumberInStock.resx">
+      <DependentUpon>201904202136369_AddNumberInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202137449_AddGenreModel.resx">
+      <DependentUpon>201904202137449_AddGenreModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202139161_AddGenre.resx">
+      <DependentUpon>201904202139161_AddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202139541_AddDataToGenreTable.resx">
+      <DependentUpon>201904202139541_AddDataToGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202150056_RenameIsSubscribedToNewsletter.resx">
+      <DependentUpon>201904202150056_RenameIsSubscribedToNewsletter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
