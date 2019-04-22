@@ -26,5 +26,10 @@ namespace Vidly.Controllers
 
             return View(customerViewModel);
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
     }
 }
