@@ -1,9 +1,8 @@
 namespace Vidly.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdateMembershipTypeNameToDatabase : DbMigration
+    public partial class UpdateNameColumnInMembershipTypesTable : DbMigration
     {
         public override void Up()
         {

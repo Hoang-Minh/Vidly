@@ -3,7 +3,7 @@ namespace Vidly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulateMembershipType : DbMigration
+    public partial class AddDataToMembershipTypesTable : DbMigration
     {
         public override void Up()
         {
