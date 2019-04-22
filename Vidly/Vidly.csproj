@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201904220009155_UpdateNameColumnInMembershipTypesTable.Designer.cs">
       <DependentUpon>201904220009155_UpdateNameColumnInMembershipTypesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904220038506_AddDataToCustomersTable.cs" />
+    <Compile Include="Migrations\201904220038506_AddDataToCustomersTable.Designer.cs">
+      <DependentUpon>201904220038506_AddDataToCustomersTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -231,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904220009155_UpdateNameColumnInMembershipTypesTable.resx">
       <DependentUpon>201904220009155_UpdateNameColumnInMembershipTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220038506_AddDataToCustomersTable.resx">
+      <DependentUpon>201904220038506_AddDataToCustomersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
