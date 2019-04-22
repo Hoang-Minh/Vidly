@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -38,16 +39,34 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            MyDbContext.Customers.Add(customer);
-            MyDbContext.SaveChanges();
+            if (customer.Id == 0)
+            {
+                MyDbContext.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDb = MyDbContext.Customers.Single(x => x.Id == customer.Id);
 
+                if (customerInDb == null) return HttpNotFound("Customer not found");
+
+                MyDbContext.Customers.AddOrUpdate(customer);
+            }
+
+            MyDbContext.SaveChanges();
             return RedirectToAction("Index", "Customer");
         }
 
         public ActionResult Edit(int id)
         {
+            if (id == 0)
+            {
+                var emptyViewModel = new CustomerFormViewModel { Customer = new Customer(), MembershipTypes = MyDbContext.MembershipTypes.ToList() };
+
+                return View("CustomerForm", emptyViewModel);
+            }
+
             var customer = MyDbContext.Customers.Find(id);
             if (customer == null) return HttpNotFound("Customer not found");
 

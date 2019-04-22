@@ -4,8 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Customer</h2>
-@using (Html.BeginForm("Create", "Customer"))
+<h2>@(Model.Customer.Id == 0 ? "New Customer" : "Edit Customer")</h2>
+
+@using (Html.BeginForm("Save", "Customer"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
@@ -25,6 +26,7 @@
             @Html.Label("Subscribed to Newsletter?")
         </label>
     </div>
+    @Html.HiddenFor(m => m.Customer.Id)
     <button type="submit" class="btn btn-primary">Save</button>
 }
 
