@@ -1,27 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Vidly.Models;
 using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : BaseController
     {
-        private readonly MyDbContext _context;
-
-        public CustomerController()
-        {
-            _context = new MyDbContext();
-        }
-
         // GET: Customer
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(x => x.MembershipType).ToList();
+            var customers = MyDbContext.Customers.Include(x => x.MembershipType).ToList();
             var customerViewModel = new CustomerViewModel {Customers = customers};
 
             return View(customerViewModel);
@@ -29,7 +18,7 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(x => x.MembershipType).SingleOrDefault(y => y.Id == id);
+            var customer = MyDbContext.Customers.Include(x => x.MembershipType).SingleOrDefault(y => y.Id == id);
             
 
             if (customer == null) return HttpNotFound();

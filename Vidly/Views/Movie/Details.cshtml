@@ -8,4 +8,19 @@
     <div class="page-header">
         <h1>@Model.Movie.Name</h1>
     </div>
+    <ul>
+        <li>
+            Genre: <span>@Model.Movie.Genre.Name</span>
+        </li>
+        <li>
+            Release Date: <span>@Model.Movie.ReleaseDate.ToString("MMMM dd, yyyy")</span>
+        </li>
+        <li>
+            Date Added: <span>@Model.Movie.DateAdded.ToString("MMMM dd, yyyy")</span>
+        </li>
+        <li>
+            Number In Stock: <span>@Model.Movie.NumberInStock</span>
+        </li>
+
+    </ul>
 </div>

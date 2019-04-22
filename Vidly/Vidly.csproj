@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
@@ -151,6 +152,14 @@
     <Compile Include="Migrations\201904220038506_AddDataToCustomersTable.cs" />
     <Compile Include="Migrations\201904220038506_AddDataToCustomersTable.Designer.cs">
       <DependentUpon>201904220038506_AddDataToCustomersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220043077_AddDataToMoviesTable.cs" />
+    <Compile Include="Migrations\201904220043077_AddDataToMoviesTable.Designer.cs">
+      <DependentUpon>201904220043077_AddDataToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220051366_AddMoreDataToMoviesTable.cs" />
+    <Compile Include="Migrations\201904220051366_AddMoreDataToMoviesTable.Designer.cs">
+      <DependentUpon>201904220051366_AddMoreDataToMoviesTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -209,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -238,6 +248,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904220038506_AddDataToCustomersTable.resx">
       <DependentUpon>201904220038506_AddDataToCustomersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220043077_AddDataToMoviesTable.resx">
+      <DependentUpon>201904220043077_AddDataToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220051366_AddMoreDataToMoviesTable.resx">
+      <DependentUpon>201904220051366_AddMoreDataToMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
