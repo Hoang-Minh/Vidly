@@ -133,43 +133,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904212356401_InitialModels.cs" />
-    <Compile Include="Migrations\201904212356401_InitialModels.Designer.cs">
-      <DependentUpon>201904212356401_InitialModels.cs</DependentUpon>
+    <Compile Include="Migrations\201904220259595_InitModels.cs" />
+    <Compile Include="Migrations\201904220259595_InitModels.Designer.cs">
+      <DependentUpon>201904220259595_InitModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904220002461_AddDataToGenresTable.cs" />
-    <Compile Include="Migrations\201904220002461_AddDataToGenresTable.Designer.cs">
-      <DependentUpon>201904220002461_AddDataToGenresTable.cs</DependentUpon>
+    <Compile Include="Migrations\201904220300470_AddDataToGenresTable.cs" />
+    <Compile Include="Migrations\201904220300470_AddDataToGenresTable.Designer.cs">
+      <DependentUpon>201904220300470_AddDataToGenresTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904220005203_AddDataToMembershipTypesTable.cs" />
-    <Compile Include="Migrations\201904220005203_AddDataToMembershipTypesTable.Designer.cs">
-      <DependentUpon>201904220005203_AddDataToMembershipTypesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201904220301562_AddDataToMembershipTypesTable.cs" />
+    <Compile Include="Migrations\201904220301562_AddDataToMembershipTypesTable.Designer.cs">
+      <DependentUpon>201904220301562_AddDataToMembershipTypesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904220009155_UpdateNameColumnInMembershipTypesTable.cs" />
-    <Compile Include="Migrations\201904220009155_UpdateNameColumnInMembershipTypesTable.Designer.cs">
-      <DependentUpon>201904220009155_UpdateNameColumnInMembershipTypesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201904220302421_SetNameInMembershipTypesTable.cs" />
+    <Compile Include="Migrations\201904220302421_SetNameInMembershipTypesTable.Designer.cs">
+      <DependentUpon>201904220302421_SetNameInMembershipTypesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904220038506_AddDataToCustomersTable.cs" />
-    <Compile Include="Migrations\201904220038506_AddDataToCustomersTable.Designer.cs">
-      <DependentUpon>201904220038506_AddDataToCustomersTable.cs</DependentUpon>
+    <Compile Include="Migrations\201904220303352_AddDataToCustomersTable.cs" />
+    <Compile Include="Migrations\201904220303352_AddDataToCustomersTable.Designer.cs">
+      <DependentUpon>201904220303352_AddDataToCustomersTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904220043077_AddDataToMoviesTable.cs" />
-    <Compile Include="Migrations\201904220043077_AddDataToMoviesTable.Designer.cs">
-      <DependentUpon>201904220043077_AddDataToMoviesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904220051366_AddMoreDataToMoviesTable.cs" />
-    <Compile Include="Migrations\201904220051366_AddMoreDataToMoviesTable.Designer.cs">
-      <DependentUpon>201904220051366_AddMoreDataToMoviesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201904220304154_AddDataToMoviesTable.cs" />
+    <Compile Include="Migrations\201904220304154_AddDataToMoviesTable.Designer.cs">
+      <DependentUpon>201904220304154_AddDataToMoviesTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\MembershipTypes.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\MovieViewModel.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-simplex.css" />
@@ -215,7 +212,7 @@
     <Content Include="Views\Movie\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
-    <Content Include="Views\Customer\New.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -235,26 +232,23 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904212356401_InitialModels.resx">
-      <DependentUpon>201904212356401_InitialModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904220259595_InitModels.resx">
+      <DependentUpon>201904220259595_InitModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904220002461_AddDataToGenresTable.resx">
-      <DependentUpon>201904220002461_AddDataToGenresTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904220300470_AddDataToGenresTable.resx">
+      <DependentUpon>201904220300470_AddDataToGenresTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904220005203_AddDataToMembershipTypesTable.resx">
-      <DependentUpon>201904220005203_AddDataToMembershipTypesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904220301562_AddDataToMembershipTypesTable.resx">
+      <DependentUpon>201904220301562_AddDataToMembershipTypesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904220009155_UpdateNameColumnInMembershipTypesTable.resx">
-      <DependentUpon>201904220009155_UpdateNameColumnInMembershipTypesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904220302421_SetNameInMembershipTypesTable.resx">
+      <DependentUpon>201904220302421_SetNameInMembershipTypesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904220038506_AddDataToCustomersTable.resx">
-      <DependentUpon>201904220038506_AddDataToCustomersTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904220303352_AddDataToCustomersTable.resx">
+      <DependentUpon>201904220303352_AddDataToCustomersTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904220043077_AddDataToMoviesTable.resx">
-      <DependentUpon>201904220043077_AddDataToMoviesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904220051366_AddMoreDataToMoviesTable.resx">
-      <DependentUpon>201904220051366_AddMoreDataToMoviesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904220304154_AddDataToMoviesTable.resx">
+      <DependentUpon>201904220304154_AddDataToMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
