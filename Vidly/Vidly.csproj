@@ -157,6 +157,18 @@
     <Compile Include="Migrations\201904220304154_AddDataToMoviesTable.Designer.cs">
       <DependentUpon>201904220304154_AddDataToMoviesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904230429509_UpdateMovieModel.cs" />
+    <Compile Include="Migrations\201904230429509_UpdateMovieModel.Designer.cs">
+      <DependentUpon>201904230429509_UpdateMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904230441573_MakeReleaseDateAsNullableType.cs" />
+    <Compile Include="Migrations\201904230441573_MakeReleaseDateAsNullableType.Designer.cs">
+      <DependentUpon>201904230441573_MakeReleaseDateAsNullableType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904230443064_MakeNumberInStockAsNullableType.cs" />
+    <Compile Include="Migrations\201904230443064_MakeNumberInStockAsNullableType.Designer.cs">
+      <DependentUpon>201904230443064_MakeNumberInStockAsNullableType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -165,6 +177,7 @@
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\MovieViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
   </ItemGroup>
@@ -213,6 +226,7 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movie\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,6 +263,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904220304154_AddDataToMoviesTable.resx">
       <DependentUpon>201904220304154_AddDataToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904230429509_UpdateMovieModel.resx">
+      <DependentUpon>201904230429509_UpdateMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904230441573_MakeReleaseDateAsNullableType.resx">
+      <DependentUpon>201904230441573_MakeReleaseDateAsNullableType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904230443064_MakeNumberInStockAsNullableType.resx">
+      <DependentUpon>201904230443064_MakeNumberInStockAsNullableType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
