@@ -71,13 +71,6 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            if (id == 0)
-            {
-                var emptyViewModel = new CustomerFormViewModel { Customer = new Customer(), MembershipTypes = MyDbContext.MembershipTypes.ToList() };
-
-                return View("CustomerForm", emptyViewModel);
-            }
-
             var customer = MyDbContext.Customers.Find(id);
             if (customer == null) return HttpNotFound("Customer not found");
 

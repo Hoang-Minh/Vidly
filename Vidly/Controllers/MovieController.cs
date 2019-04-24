@@ -29,22 +29,37 @@ namespace Vidly.Controllers
             return View(movieViewController);
         }
 
+        public ActionResult New()
+        {
+            var emptyMovieFormViewModel = new MovieFormViewModel
+            {
+                Movie = new Movie(),
+                Genre = MyDbContext.Genres.ToList()
+            };
+
+            return View("MovieForm", emptyMovieFormViewModel);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            if (movie.Id == 0)
+            if (!ModelState.IsValid)
             {
-                MyDbContext.Movies.Add(movie);
-            }
-            else
-            {
-                var movieInDb = MyDbContext.Movies.SingleOrDefault(x => x.Id == movie.Id);
+                var emptyMovieFormViewModel = new MovieFormViewModel
+                {
+                    Movie = new Movie(),
+                    Genre = MyDbContext.Genres.ToList()
+                };
 
-                if (movieInDb == null) return HttpNotFound("Movie not found in database");
-
-                MyDbContext.Movies.AddOrUpdate(movie);
+                return View("MovieForm", emptyMovieFormViewModel);
             }
+
+            var movieInDb = MyDbContext.Movies.SingleOrDefault(x => x.Id == movie.Id);
+
+            if (movieInDb == null) return HttpNotFound("Movie not found in database");
+
+            MyDbContext.Movies.AddOrUpdate(movie);
 
             MyDbContext.SaveChanges();
 

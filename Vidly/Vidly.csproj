@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201904230443064_MakeNumberInStockAsNullableType.Designer.cs">
       <DependentUpon>201904230443064_MakeNumberInStockAsNullableType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904240627401_UpdateMovieModel1.cs" />
+    <Compile Include="Migrations\201904240627401_UpdateMovieModel1.Designer.cs">
+      <DependentUpon>201904240627401_UpdateMovieModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -273,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904230443064_MakeNumberInStockAsNullableType.resx">
       <DependentUpon>201904230443064_MakeNumberInStockAsNullableType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904240627401_UpdateMovieModel1.resx">
+      <DependentUpon>201904240627401_UpdateMovieModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
