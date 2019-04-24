@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Net;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
@@ -35,7 +34,6 @@ namespace Vidly.Controllers
             var membershipTypes = MyDbContext.MembershipTypes.ToList();
             var newCustomerViewModel = new CustomerFormViewModel{MembershipTypes = membershipTypes};
 
-
             return View("CustomerForm", newCustomerViewModel);
         }
 
@@ -44,9 +42,8 @@ namespace Vidly.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new CustomerFormViewModel
+                var viewModel = new CustomerFormViewModel(customer)
                 {
-                    Customer = customer,
                     MembershipTypes = MyDbContext.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", viewModel);
@@ -74,9 +71,8 @@ namespace Vidly.Controllers
             var customer = MyDbContext.Customers.Find(id);
             if (customer == null) return HttpNotFound("Customer not found");
 
-            var viewModel = new CustomerFormViewModel
+            var viewModel = new CustomerFormViewModel(customer)
             {
-                Customer = customer,
                 MembershipTypes = MyDbContext.MembershipTypes.ToList()
             };
 

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+﻿using System.Data.Entity;
 using System.Data.Entity.Migrations;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -33,7 +30,6 @@ namespace Vidly.Controllers
         {
             var emptyMovieFormViewModel = new MovieFormViewModel
             {
-                Movie = new Movie(),
                 Genre = MyDbContext.Genres.ToList()
             };
 
@@ -46,9 +42,8 @@ namespace Vidly.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var emptyMovieFormViewModel = new MovieFormViewModel
+                var emptyMovieFormViewModel = new MovieFormViewModel(movie)
                 {
-                    Movie = new Movie(),
                     Genre = MyDbContext.Genres.ToList()
                 };
 
@@ -69,23 +64,11 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            if (id == 0)
-            {
-                var emptyMovieFormViewModel = new MovieFormViewModel
-                {
-                    Movie = new Movie(),
-                    Genre = MyDbContext.Genres.ToList()
-                };
-                
-                return View("MovieForm", emptyMovieFormViewModel);
-            }
-
             var movie = MyDbContext.Movies.Find(id);
             if (movie == null) return HttpNotFound("Movie cannot be found");
 
-            var movieFormViewModel = new MovieFormViewModel
+            var movieFormViewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genre = MyDbContext.Genres.ToList()
             };
 
