@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Vidly.App_Start;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
@@ -10,39 +13,48 @@ namespace Vidly.Controllers.Api
     public class CustomersController : BaseApiController
     {
         // GET api/Customers
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
-            return MyDbContext.Customers.ToList();
+            return MyDbContext.Customers.ProjectTo<CustomerDto>().ToList();
         }
 
         // GET api/Customers/id
-        public Customer GetCustomer(int id)
+        public CustomerDto GetCustomer(int id)
         {
             var customer = MyDbContext.Customers.Single(x => x.Id == id);
-            return customer == null ? throw new HttpResponseException(HttpStatusCode.NotFound) : customer;
+            var mapperProfile = new MappingProfile();
+            var dest = mapperProfile.Mapper.Map<Customer, CustomerDto>(customer);
+
+            return dest ?? throw new HttpResponseException(HttpStatusCode.NotFound);
         }
 
         // POST api/Customers
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
             if(!ModelState.IsValid) throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+            var mapperProfile = new MappingProfile();
+            var customer = mapperProfile.Mapper.Map<CustomerDto, Customer>(customerDto);
             MyDbContext.Customers.Add(customer);
             MyDbContext.SaveChanges();
 
-            return customer;
+            customerDto.Id = customer.Id;
+            return customerDto;
         }
 
         // PUT api/customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, Customer customer)
+        public void UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid) throw new HttpResponseException(HttpStatusCode.BadRequest);
             var customerInDb = MyDbContext.Customers.SingleOrDefault(x => x.Id == id);
 
             if(customerInDb == null) throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            MyDbContext.Customers.AddOrUpdate(customer);
+            var mapperProfile = new MappingProfile();
+            mapperProfile.Mapper.Map(customerDto, customerInDb);
+
             MyDbContext.SaveChanges();
         }
 
