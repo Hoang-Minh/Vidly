@@ -12,10 +12,11 @@ namespace Vidly.Controllers
         // GET: Movie
         public ActionResult Index()
         {
-            var movies = MyDbContext.Movies.Include(x => x.Genre).ToList();
-            var movieViewController = new MovieViewModel {Movies = movies};
+            //var movies = MyDbContext.Movies.Include(x => x.Genre).ToList();
+            //var movieViewController = new MovieViewModel {Movies = movies};
 
-            return View(movieViewController);
+            //return View(movieViewController);
+            return View();
         }
 
         public ActionResult Details(int id)

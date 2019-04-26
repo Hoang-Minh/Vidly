@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using AutoMapper.QueryableExtensions;
@@ -14,7 +15,9 @@ namespace Vidly.Controllers.Api
         [HttpGet]
         public IHttpActionResult GetMovies()
         {
-            return Ok(MyDbContext.Movies.ProjectTo<MovieDto>().ToList());
+            return Ok(MyDbContext.Movies
+                .ProjectTo<MovieDto>()
+                .ToList());
         }
 
         // GET api/movie/id
