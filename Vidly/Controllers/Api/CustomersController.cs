@@ -14,7 +14,9 @@ namespace Vidly.Controllers.Api
         // GET api/Customers
         public IHttpActionResult GetCustomers()
         {
-            return Ok(MyDbContext.Customers.ProjectTo<CustomerDto>().ToList());
+            return Ok(MyDbContext.Customers
+                .ProjectTo<CustomerDto>()
+                .ToList());
         }
 
         // GET api/Customers/id

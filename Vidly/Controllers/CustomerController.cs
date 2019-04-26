@@ -12,10 +12,11 @@ namespace Vidly.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var customers = MyDbContext.Customers.Include(x => x.MembershipType).ToList();
-            var customerViewModel = new CustomerViewModel {Customers = customers};
-
-            return View(customerViewModel);
+            var customers = MyDbContext.Customers
+                .Include(x => x.MembershipType)
+                .ToList();
+            
+            return View();
         }
 
         public ActionResult Details(int id)
