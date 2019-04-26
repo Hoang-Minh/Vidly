@@ -3,3 +3,6 @@ packages
 obj
 bin
 *.user
+/Vidly/Scripts
+/Vidly/Scripts/DataTables
+/Vidly/Content/DataTables
